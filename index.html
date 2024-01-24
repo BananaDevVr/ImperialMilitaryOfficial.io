@@ -42,13 +42,35 @@ main {
 
 /* In-Game Rules and Credits styling */
 .section-container {
-    background-color: #333333; /* Dark gray background */
+    background-color: #1f1f1f; /* Darker gray background */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 20px;
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.section-container::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 15px;
     outline: 2px solid #00ff00; /* Neon outline */
+    opacity: 0;
+    animation: glowingOutline 2s infinite alternate;
+}
+
+@keyframes glowingOutline {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.8;
+    }
 }
 
 .section-container h2 {
